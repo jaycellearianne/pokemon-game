@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        font-family: 'Press Start 2P', cursive;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    button {
+        border: 0;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: rgb(72, 72, 72);
+    }
+</style>
+
+<body>
+    <div style="display: inline-block; position: relative; ">
+        <canvas class="canvas" id="fightscene" width="1024" height="576"></canvas>
+
+        <!-- Represents health bar of draggle (enemy) -->
+        <div style="
+        background-color: white;
+        width: 250px;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        border: 4px black solid;
+        padding: 12px;">
+            <h1 style="font-size: 16px">Draggle</h1>
+            <div style="position: relative">
+                <div style="height: 5px; background-color: #ccc; margin-top: 10px"></div>
+                <div id="enemyHealthBar" style="
+            height: 5px;
+            background-color: green;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Represents health bar of emby (us) -->
+    </div>
+    <div style="background-color: white;
+    width: 250px;
+    position: absolute;
+    top: 280px;
+    right: 50px;
+    border: 4px black solid;
+    padding: 12px;">
+        <h1 style="font-size: 16px">Emby</h1>
+        <div style="position: relative">
+            <div style="height: 5px; background-color: #ccc; margin-top: 10px"></div>
+            <div id="playerHealthBar" style="
+        height: 5px;
+        background-color: green;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Represents Exp bar of emby (us) -->
+    <div style="
+        background-color: white;
+        width: 250px;
+        position: absolute;
+        top: 350px;
+        right: 50px;
+        border: 4px black solid;
+        padding: 12px;">
+        <h1 style="font-size: 16px">xp (lvl)</h1>
+        <h2 style="font-size: 9px" id="exp"></h2>
+        <div style="position: relative">
+            <div style="height: 5px; background-color: #ccc; margin-top: 10px"></div>
+            <div id="playerExpBar" style="
+            height: 5px;
+            background-color: rgb(255, 0, 0);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;">
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div style="
+        background-color: rgb(0, 0, 0);
+        height: 140px;
+        position:inherit;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-top: 4px rgb(177, 177, 177) solid;
+        display: flex;">
+    <button id="attacksBox" style="
+    width: 66.66%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);">Tackle</button>
+    <button id="attacksBox" style="
+    width: 66.66%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);">Run</button>
+    </div>
+    </div>
+    <script src="battle.js"></script>
+</body>
+
+</html>
