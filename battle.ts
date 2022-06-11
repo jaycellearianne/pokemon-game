@@ -51,17 +51,16 @@ class Character {
     window.location.href = "pokemon.html";
   }
   attack(target: Character): any {
-    let health = document.getElementById("health") as HTMLInputElement;
-    this.hp = health.value;
-
-    target.hp = target.hp - 10;
-
-    if (target.hp === 0) {
-      window.location.href = "pokemon.html";
-    }
-    if (target.hp > 0) {
-      target.attack;
-    }
+    attack(target: Character){
+    function attack() {
+        let playerHealth = document.getElementById("health") as HTMLInputElement;
+        playerHealth.value -= 10;
+  
+        if(target.hp.value === 0){
+          window.location.href = "pokemon.html";
+        }
+      }
+      return attack();
   }
   addExp(_target: Character) {}
 }
