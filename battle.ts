@@ -19,51 +19,67 @@ class FightScene {
     let background = new Image();
     background.src = "battleBackground.png";
     background.onload = () => {
-      context.drawImage(background, 0, 0, this.canvas.width, this.canvas.height);
+      context.drawImage(
+        background,
+        0,
+        0,
+        this.canvas.width,
+        this.canvas.height
+      );
     };
 
     let player = new Image();
     player.src = "embySprite1.png";
-    player.onload = () =>{
-        context.drawImage(player, 200,325 , 100, 100);
-    }
+    player.onload = () => {
+      context.drawImage(player, 200, 325, 100, 100);
+    };
     let enemy = new Image();
     enemy.src = "draggleSprite1.png";
-    enemy.onload = () =>{
-        context.drawImage(enemy, 600,100 , 100, 100);
-    }
+    enemy.onload = () => {
+      context.drawImage(enemy, 600, 100, 100, 100);
+    };
   };
 }
 class Character {
- public hp!: number;
- public xp!: number;
- constructor(){
- }
+  public hp!: HTMLInputElement | any;
+  public xp!: number;
+  constructor() {
+    this.hp = this.hp;
+  }
 
- run(){
-    let button
-    window.location.href = 'pokemon.html'
- }
- attack(target: Character){
-    target.hp = target.hp - 1;
+  run() {
+    window.location.href = "pokemon.html";
+  }
+  attack(target: Character): any {
+    let health = document.getElementById("health") as HTMLInputElement;
+    this.hp = health.value;
 
-    if(target.hp === 0){
-        window.location.href = 'pokemon.html'
+    target.hp = target.hp - 10;
+
+    if (target.hp === 0) {
+      window.location.href = "pokemon.html";
     }
- }
- addExp(target:Char){
- }
+    if (target.hp > 0) {
+      target.attack;
+    }
+  }
+  addExp(_target: Character) {}
 }
 
-class Draggle extends Character{
+class Draggle extends Character {
+  constructor() {
+    super();
+  }
+  attack(_target: Emby): void {}
 }
 
-class Emby extends Character{
-
+class Emby extends Character {
+  constructor() {
+    super();
+  }
+  attack(_target: Draggle): void {}
 }
-
 
 const fight = new FightScene();
 fight.load();
-const battle = new Character()
-
+const battle = new Character();
