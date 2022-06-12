@@ -67,7 +67,6 @@ class gameCanvas {
                     this.keys.ArrowDown.pressed = true;
                     break
             }
-            console.log(this.keys)
         })
 
         window.addEventListener('keyup', (event) => {
@@ -84,8 +83,7 @@ class gameCanvas {
                 case 'ArrowDown':
                     this.keys.ArrowDown.pressed = false;
                     break
-            }
-            console.log(this.keys)
+            }            
         })
 
         if (this.keys.ArrowLeft.pressed) {
