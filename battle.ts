@@ -54,7 +54,7 @@ class Character {
     attack(target: Character){
     function attack() {
         let playerHealth = document.getElementById("health") as HTMLInputElement;
-        playerHealth.value -= 10;
+        playerHealth.value -= 20;
   
         if(target.hp.value === 0){
           window.location.href = "pokemon.html";
