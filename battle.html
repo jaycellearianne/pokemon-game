@@ -42,7 +42,7 @@
         padding: 12px;">
             <h1 style="font-size: 16px">Draggle</h1>
             <div style="position: relative">
-                <progress id="health" value="100" max="100">Draggle</progress>
+                <progress id="Ehealth" onload="enemy.attack()" value="100" max="100">Draggle</progress>
             </div>
         </div> 
         
@@ -58,7 +58,7 @@
     padding: 12px;">
         <h1 style="font-size: 16px">Emby</h1>
         <div style="position: relative">
-            <progress id="health" value="100" max="100">Emby</progress>
+            <progress id="health" onload="" value="100" max="100">Emby</progress>
         </div>
     </div>
 
@@ -71,7 +71,7 @@
         left: 700px;
         border: 4px black solid;
         padding: 12px;">
-        <h1 style="font-size: 16px">xp (lvl)</h1>
+        <h1 id="lvl" style="font-size: 16px">xp (lvl: )</h1>
         <h2 style="font-size: 9px" id="exp"></h2>
         <div style="position: relative">
             <progress id="exp" value="0" max="100">Emby</progress>
@@ -86,7 +86,7 @@
         position:inherit;
         border-top: 4px rgb(177, 177, 177) solid;
         display: flex;">
-    <button onclick="battle.attack()" id="attackBox" style="
+    <button onclick="player.attack()" id="attackBox" style="
     width: 50%;
     display: grid;">Tackle</button>
     <button onclick="battle.run()" id="runBox" style="
