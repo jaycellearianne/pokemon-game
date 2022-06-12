@@ -60,10 +60,12 @@ class Draggle extends Character {
   }
   attack(_target: Emby): any {
     let playerHealth = document.getElementById("health") as HTMLInputElement;
+    let enemyHealth = document.getElementById("Ehealth") as HTMLInputElement;
     playerHealth.value -= 20;
 
-    return attack();
-  }
+    if(enemyHealth.value === 0){
+        window.location.href = "pokemon.html"
+    }
 }
 
 class Emby extends Character {
