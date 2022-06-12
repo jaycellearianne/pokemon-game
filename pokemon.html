@@ -1,8 +1,35 @@
-<html>
-    <style>
-    </style>
-    <body>
-     <canvas class= "canvas" id = "canvas" width="1024" height="576"></canvas>   
-    </body>
-    <script src = "pokemon.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+</head>
+<style>
+    .button {
+        background-color: #750404;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display:inline-block;
+        font-size: 16px;
+        background-position: bottom;
+        display: inline;
+
+    }
+</style>
+
+<body>
+
+    <canvas class="canvas" id="canvas" width="1024" height="576">
+        
+    </canvas>
+<button id="FightButton" class="button" onclick="battleScene.battle()">fight</button>
+</body>
+<script src="pokemon.js"></script>
+
 </html>

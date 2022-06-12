@@ -104,6 +104,23 @@ class gameCanvas {
     }
 }
 
+class LoadBattleScene extends gameCanvas {
+    constructor() {
+        super();
+    }
+
+    battle = () => {
+
+        if (this.backgroundheight = -910, this.backgroundwidth = -851) {
+            window.location.href = "battle.html"
+        }
+
+    }
+}
+
+
 const canvas = new gameCanvas();
 canvas.LoadGame();
+const battleScene = new LoadBattleScene();
+
 
