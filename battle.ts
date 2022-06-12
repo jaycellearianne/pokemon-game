@@ -50,18 +50,7 @@ class Character {
   run() {
     window.location.href = "pokemon.html";
   }
-  attack(target: Character): any {
-    attack(target: Character){
-    function attack() {
-        let playerHealth = document.getElementById("health") as HTMLInputElement;
-        playerHealth.value -= 20;
-  
-        if(target.hp.value === 0){
-          window.location.href = "pokemon.html";
-        }
-      }
-      return attack();
-  }
+  attack(target: Character): any {}
   addExp(_target: Character) {}
 }
 
@@ -69,16 +58,37 @@ class Draggle extends Character {
   constructor() {
     super();
   }
-  attack(_target: Emby): void {}
+  attack(_target: Emby): any {
+    let playerHealth = document.getElementById("health") as HTMLInputElement;
+    playerHealth.value -= 20;
+
+    return attack();
+  }
 }
 
 class Emby extends Character {
   constructor() {
     super();
   }
-  attack(_target: Draggle): void {}
+  attack(_target: Draggle): any {
+    let enemyHealth = document.getElementById("Ehealth") as HTMLInputElement;
+    enemyHealth.value -= 20;
+
+    return attack();
+  }
+  addExp(_target: Character): void {
+    function xp() {
+      let playerXp = document.getElementById("exp") as HTMLInputElement;
+      playerXp.value += 10;
+    }
+    if (_target.hp === 0) {
+      return xp();
+    }
+  }
 }
 
 const fight = new FightScene();
 fight.load();
 const battle = new Character();
+const player = new Emby();
+const enemy = new Draggle
